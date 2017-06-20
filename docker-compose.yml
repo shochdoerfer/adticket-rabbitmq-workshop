@@ -1,0 +1,21 @@
+version: "2"
+services:
+  rabbitmq:
+    image: "rabbitmq:3.6-management"
+    ports:
+      # host:container
+      - "8080:15672"
+      - "15674:15674"
+      - "61613:61613"
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=rmqc
+  workshop:
+    build: .
+    ports:
+      # host:container
+      - "80:80"
+      - "443:443"
+    links:
+      - rabbitmq
+    volumes:
+      - ./:/var/www/html/
