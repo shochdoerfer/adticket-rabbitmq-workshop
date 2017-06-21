@@ -23,6 +23,7 @@ RUN echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.lis
         php7.1-mcrypt \
         apache2 \
         libapache2-mod-php7.1 && \
+        a2enmod rewrite && \
         apt-get clean autoclean
 
 RUN curl https://getcomposer.org/download/1.3.1/composer.phar > /usr/local/bin/composer.phar && \
