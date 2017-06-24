@@ -21,6 +21,7 @@ RUN echo "deb https://packages.sury.org/php/ jessie main" > /etc/apt/sources.lis
         php7.1-mbstring \
         php7.1-bcmath \
         php7.1-mcrypt \
+        php7.1-dom \
         apache2 \
         libapache2-mod-php7.1 && \
         a2enmod rewrite && \
