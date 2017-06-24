@@ -2,6 +2,7 @@ version: "2"
 services:
   rabbitmq:
     image: "rabbitmq:3.6-management"
+    container_name: rabbitmq
     ports:
       # host:container
       - "8081:15672"
@@ -11,6 +12,7 @@ services:
       - RABBITMQ_ERLANG_COOKIE=Pu3Ah#qui
   workshop:
     build: .
+    container_name: workshop
     ports:
       # host:container
       - "8080:80"
